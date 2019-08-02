@@ -1,0 +1,34 @@
+spack:
+  specs: ["readline@7.0 %gcc@4.8.5 os=centos7"]
+  mirrors: { "mirror": "file:///mirror" }
+
+  gitlab-ci:
+    mappings:
+      - match: ["os=centos7"]
+        runner-attributes:
+          image: { "name": "spack/centos:7", "entrypoint": [""] }
+          tags: ["docker"]
+
+  cdash:
+    build-group: Release Testing (Simple)
+    url: http://cdash
+    project: spack
+    site: Spack Docker-Compose Workflow
+
+  compilers:
+    - compiler:
+        spec: gcc@4.8.5
+        target: x86_64
+        operating_system: centos7
+        paths: { "cc": "", "cxx": "", "f77": "", "fc": "" }
+        environment: {}
+        extra_rpaths: []
+        flags: {}
+        modules: []
+
+  repos: []
+  upstreams: {}
+  modules:
+    enable: []
+  packages: {}
+  config: {}

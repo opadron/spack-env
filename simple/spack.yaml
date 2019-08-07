@@ -1,5 +1,8 @@
 spack:
-  specs: ["readline@7.0 %gcc@4.8.5 os=centos7"]
+  specs:
+  - matrix:
+    - ["python@2.6", "python@2.7", "python@3"]
+    - ["%gcc@4.8.5 os=centos7"]
   mirrors: { "mirror": "file:///mirror" }
 
   gitlab-ci:

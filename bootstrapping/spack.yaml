@@ -34,7 +34,7 @@ spack:
           tags: ["docker"]
       - match: ["os=ubuntu18.04"]
         runner-attributes:
-          image: { "name": "spack/ubuntu:bionic", "entrypoint": [""] }
+          image: { "name": "spack/ubuntu-bionic", "entrypoint": [""] }
           tags: ["docker"]
 
   cdash:
